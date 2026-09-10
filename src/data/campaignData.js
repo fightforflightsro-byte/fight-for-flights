@@ -19,7 +19,7 @@ export const teamMembers = [
 ]
 
 export const socialLinks = {
-  galantom: 'https://asociatia-blondie.galantom.ro/fundraising_pages/view?id=49177&organization_subdomain=asociatia-blondie',
+  galantom: 'https://asociatia-blondie.galantom.ro/p/fight-for-flights',
   instagram: 'https://www.instagram.com/fightforflights/',
   blondie: 'https://www.asociatia-blondie.ro/',
   email: 'fightforflights.ro@gmail.com',
