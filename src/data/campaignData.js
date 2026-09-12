@@ -14,7 +14,7 @@ export const teamMembers = [
   { id: 'mircea-verdeanu', name: 'Mircea Verdeanu', role: 'Partnership coordinator', experience: 'First-time marathoner', locationCode: 'NL', locationLabel: 'Olanda', photoUrl: '/team/mircea-v.jpeg' },
   { id: 'traian-bistriceanu', name: 'Traian Bistriceanu', role: 'Fundraising coordinator', experience: 'Second-time marathoner', locationCode: 'CH', locationLabel: 'Elveția', photoUrl: '/team/traian-b.jpeg' },
   { id: 'tudor-barbieru', name: 'Tudor Bărbieru', role: 'Creative coordinator', experience: 'First-time marathoner', locationCode: 'NL', locationLabel: 'Olanda', photoUrl: '/team/tudor-b.jpeg' },
-  { id: 'iancu-matei-scurtu', name: 'Iancu Matei Scurtu', role: 'Event and visibility coordinator', experience: 'Second-time marathoner', locationCode: 'CH', locationLabel: 'Elveția', photoUrl: '/team/iancu-m.jpeg' },
+  { id: 'iancu-matei-scurtu', name: 'Iancu Matei Scurtu', role: 'Event and visibility coordinator', experience: 'Second-time marathoner', locationCode: 'CH', locationLabel: 'Elveția', photoUrl: '/team/iancu-s.jpeg' },
   { id: 'vladimir-voineag', name: 'Vladimir Voineag', role: 'Influencer and PR coordinator', experience: 'First-time marathoner', locationCode: 'NL', locationLabel: 'Olanda', photoUrl: '/team/vladimir-v.jpeg' },
 ]
 
