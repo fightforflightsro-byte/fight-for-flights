@@ -1,7 +1,7 @@
 export const campaignStats = {
   targetEur: 40000,
-  individualRaisedRon: 300,
-  galantomGoalRon: 180000,
+  individualRaisedRonFallback: 800,
+  galantomGoalRon: 210000,
   ronPerEur: 5,
   lastUpdated: '2026-09-15',
 }

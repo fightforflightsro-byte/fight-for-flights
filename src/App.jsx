@@ -1,10 +1,8 @@
 import { ArrowUpRight, Globe2, Mail, Menu, Plane, Trophy, X } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { campaignStats, corporateSponsors, socialLinks, teamMembers } from './data/campaignData'
 import { formatEur, getCampaignProgress } from './utils/campaignCalculations'
 import './App.css'
-
-const progress = getCampaignProgress(campaignStats, corporateSponsors)
 
 const copy = {
   ro: {
@@ -39,10 +37,22 @@ function ExternalLink({ children, href, className = '' }) { return <a className=
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [language, setLanguage] = useState('ro')
+  const [individualRaisedRon, setIndividualRaisedRon] = useState(campaignStats.individualRaisedRonFallback)
   const t = copy[language]
   const closeMenu = () => setMenuOpen(false)
   const corporateEmail = `mailto:${socialLinks.email}?subject=${encodeURIComponent('Propunere parteneriat Fight for Flights')}`
   const sectionIds = ['cauza', 'echipa', 'proiectul', 'sponsori']
+  const progress = getCampaignProgress({ ...campaignStats, individualRaisedRon }, corporateSponsors)
+
+  useEffect(() => {
+    fetch('/api/galantom')
+      .then((response) => {
+        if (!response.ok) throw new Error('Galantom endpoint unavailable')
+        return response.json()
+      })
+      .then((data) => setIndividualRaisedRon(data.individualRaisedRon))
+      .catch(() => setIndividualRaisedRon(campaignStats.individualRaisedRonFallback))
+  }, [])
 
   return <main>
     <nav className="nav shell" aria-label="Main navigation"><a className="wordmark" href="#acasa" onClick={closeMenu} aria-label="Fight for Flights, acasă"><img src="/assets/logo.png" alt="Fight for Flights" /></a><button className="menu-button" type="button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Open menu">{menuOpen ? <X size={22} /> : <Menu size={22} />}</button><div className={`nav-links ${menuOpen ? 'is-open' : ''}`}>{t.nav.map((label, index) => <a href={`#${sectionIds[index]}`} onClick={closeMenu} key={label}>{label}</a>)}<ExternalLink className="nav-blondie" href={socialLinks.blondie}>{t.blondie} <ArrowUpRight size={15} /></ExternalLink><label className="language-control"><Globe2 size={14} /><span className="sr-only">Language</span><select className="language-select" value={language} onChange={(event) => setLanguage(event.target.value)} aria-label="Select language"><option value="ro">RO</option><option value="en">EN</option><option value="de">DE</option></select></label><ExternalLink className="button button-small" href={socialLinks.galantom}>{t.donate} <ArrowUpRight size={15} /></ExternalLink></div></nav>
