@@ -1,13 +1,13 @@
 const galantomUrl = 'https://asociatia-blondie.galantom.ro/p/fight-for-flights'
 
 export function parseRaisedRon(html) {
-  const amountMatch = html.match(/<div class="value">\s*([\d.,]+)\s*<sup>\s*RON\s*<\/sup>[\s\S]*?<div class="name">\s*Sumă strânsă\s*<\/div>/i)
+  const statsMatch = html.match(/<div id="fPage-stats">[\s\S]*?<div class="metric\b[\s\S]*?<div class="value">\s*([\d.,]+)\s*<sup>\s*RON\s*<\/sup>/i)
 
-  if (!amountMatch) {
+  if (!statsMatch) {
     throw new Error('Could not find Galantom raised amount')
   }
 
-  return Number(amountMatch[1].replace(/[.,](?=\d{3}(?:\D|$))/g, '').replace(',', '.'))
+  return Number(statsMatch[1].replace(/[.,](?=\d{3}(?:\D|$))/g, '').replace(',', '.'))
 }
 
 export default async function handler(request, response) {
