@@ -45,9 +45,9 @@ function App() {
   const progress = getCampaignProgress({ ...campaignStats, individualRaisedRon }, corporateSponsors)
 
   useEffect(() => {
-    fetch('/api/galantom')
+    fetch('/data/galantom.json', { cache: 'no-store' })
       .then((response) => {
-        if (!response.ok) throw new Error('Galantom endpoint unavailable')
+        if (!response.ok) throw new Error('Galantom snapshot unavailable')
         return response.json()
       })
       .then((data) => setIndividualRaisedRon(data.individualRaisedRon))

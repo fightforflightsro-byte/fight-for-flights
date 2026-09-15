@@ -1,0 +1,33 @@
+name: Update Galantom amount
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch Galantom amount
+        run: node scripts/update-galantom.js
+
+      - name: Commit changed amount
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/galantom.json
+          git diff --cached --quiet || git commit -m "Update Galantom amount [skip ci]"
+          git push
