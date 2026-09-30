@@ -6,7 +6,16 @@ export const campaignStats = {
   lastUpdated: '2026-09-15',
 }
 
-export const corporateSponsors = []
+export const corporateSponsors = [
+  {
+    id: 'anonymous-corporate-sponsor-1',
+    name: 'Sponsor anonim',
+    logoUrl: '',
+    contributionEur: 948,
+    websiteUrl: '',
+    tier: 'partner',
+  },
+]
 
 export const individualDonors = []
 
