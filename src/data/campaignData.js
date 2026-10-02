@@ -17,13 +17,13 @@ export const corporateSponsors = [
   },
 
   {
-  id: 'eturia',
-  name: 'Eturia',
-  logoUrl: '',
-  contributionEur: 375,
-  websiteUrl: 'https://www.eturia.ro/',
-  tier: 'partner',
- }
+    id: 'eturia',
+    name: 'Eturia',
+    logoUrl: '/sponsors/eturia-logo.png',
+    contributionEur: 375,
+    websiteUrl: 'https://www.eturia.ro/',
+    tier: 'partner',
+  },
 ]
 
 export const individualDonors = []
