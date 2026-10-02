@@ -9,10 +9,10 @@ export const campaignStats = {
 export const corporateSponsors = [
   {
     id: 'anonymous-corporate-sponsor-1',
-    name: 'AVO Grup Invest',
-    logoUrl: '',
+    name: 'Solar One',
+    logoUrl: '/sponsors/solar-one-logo.webp',
     contributionEur: 948,
-    websiteUrl: 'https://avogrupinvest.ro/',
+    websiteUrl: 'https://www.solarone.ro/',
     tier: 'partner',
   },
 
