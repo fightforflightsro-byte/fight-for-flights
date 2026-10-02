@@ -9,12 +9,21 @@ export const campaignStats = {
 export const corporateSponsors = [
   {
     id: 'anonymous-corporate-sponsor-1',
-    name: 'Sponsor anonim',
+    name: 'AVO Grup Invest',
     logoUrl: '',
     contributionEur: 948,
-    websiteUrl: '',
+    websiteUrl: 'https://avogrupinvest.ro/',
     tier: 'partner',
   },
+
+  {
+  id: 'eturia',
+  name: 'Eturia',
+  logoUrl: '',
+  contributionEur: 375,
+  websiteUrl: 'https://www.eturia.ro/',
+  tier: 'partner',
+ }
 ]
 
 export const individualDonors = []
