@@ -1,7 +1,10 @@
 {
   "individualRaisedRon": 3761,
+  "ronPerEur": 5.3527,
   "currency": "RON",
+  "rateSource": "BNR",
+  "rateSourceUrl": "https://curs.bnr.ro/nbrfxrates.xml",
   "source": "Galantom",
   "sourceUrl": "https://asociatia-blondie.galantom.ro/p/fight-for-flights",
-  "fetchedAt": "2026-09-15T21:05:52.723Z"
+  "fetchedAt": "2026-10-06T20:15:01.992Z"
 }

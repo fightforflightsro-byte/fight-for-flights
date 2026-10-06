@@ -38,12 +38,13 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [language, setLanguage] = useState('ro')
   const [individualRaisedRon, setIndividualRaisedRon] = useState(campaignStats.individualRaisedRonFallback)
+  const [ronPerEur, setRonPerEur] = useState(campaignStats.ronPerEurFallback)
   const t = copy[language]
   const closeMenu = () => setMenuOpen(false)
   const corporateEmail = `mailto:${socialLinks.email}?subject=${encodeURIComponent('Propunere parteneriat Fight for Flights')}`
   const sectionIds = ['cauza', 'echipa', 'proiectul', 'sponsori']
   const publicSponsors = corporateSponsors.filter((sponsor) => sponsor.logoUrl || sponsor.websiteUrl)
-  const progress = getCampaignProgress({ ...campaignStats, individualRaisedRon }, corporateSponsors)
+  const progress = getCampaignProgress({ ...campaignStats, individualRaisedRon, ronPerEur }, corporateSponsors)
 
   useEffect(() => {
     fetch('/data/galantom.json', { cache: 'no-store' })
@@ -51,7 +52,10 @@ function App() {
         if (!response.ok) throw new Error('Galantom snapshot unavailable')
         return response.json()
       })
-      .then((data) => setIndividualRaisedRon(data.individualRaisedRon))
+      .then((data) => {
+        setIndividualRaisedRon(data.individualRaisedRon)
+        setRonPerEur(data.ronPerEur)
+      })
       .catch(() => setIndividualRaisedRon(campaignStats.individualRaisedRonFallback))
   }, [])
 

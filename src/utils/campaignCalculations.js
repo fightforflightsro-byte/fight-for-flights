@@ -1,6 +1,6 @@
 export function getCampaignProgress(stats, sponsors) {
   const individualEur = stats.individualRaisedRon / stats.ronPerEur
-  const corporateEur = sponsors.reduce((total, sponsor) => total + sponsor.contributionEur, 0)
+  const corporateEur = sponsors.reduce((total, sponsor) => total + (sponsor.contributionRon / stats.ronPerEur), 0)
   const totalEur = individualEur + corporateEur
   const percentage = Math.min((totalEur / stats.targetEur) * 100, 100)
 

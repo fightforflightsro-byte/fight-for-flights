@@ -2,7 +2,7 @@ export const campaignStats = {
   targetEur: 40000,
   individualRaisedRonFallback: 800,
   galantomGoalRon: 210000,
-  ronPerEur: 5,
+  ronPerEurFallback: 5,
   lastUpdated: '2026-09-15',
 }
 
@@ -11,7 +11,7 @@ export const corporateSponsors = [
     id: 'anonymous-corporate-sponsor-1',
     name: 'Solar One',
     logoUrl: '/sponsors/solar-one-logo.webp',
-    contributionEur: 948,
+    contributionRon: 4740,
     websiteUrl: 'https://www.solarone.ro/',
     tier: 'partner',
   },
@@ -20,7 +20,7 @@ export const corporateSponsors = [
     id: 'eturia',
     name: 'Eturia',
     logoUrl: '/sponsors/eturia-logo.png',
-    contributionEur: 375,
+    contributionRon: 1875,
     websiteUrl: 'https://www.eturia.ro/',
     tier: 'partner',
   },
